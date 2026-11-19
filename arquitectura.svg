@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="DejaVu Sans, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#14262B"/></marker><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#C2412D"/></marker></defs>
+<rect width="1600" height="1000" fill="#F4F8F9"/>
+<rect x="0" y="0" width="1600" height="110" fill="#14262B"/>
+<circle cx="80" cy="55" r="34" fill="#F4BF3A"/><text x="80" y="66" text-anchor="middle" font-size="28" font-weight="bold" fill="#14262B">JG</text>
+<text x="135" y="50" font-size="32" font-weight="bold" fill="#FFFFFF">Mi Pizzería en la Nube: así automaticé los pedidos en AWS</text>
+<text x="135" y="84" font-size="18" fill="#BFD7DB">Diseñé esta arquitectura serverless para el Bootcamp Cloud Computing de BeTek · Cohorte 3 · John Luis Gamboa Gamboa</text>
+<rect x="50" y="150" width="270" height="150" rx="14" fill="#FFFFFF" stroke="#5A6E73" stroke-width="3"/>
+<rect x="50" y="150" width="270" height="44" rx="14" fill="#5A6E73"/><rect x="50" y="180" width="270" height="14" fill="#5A6E73"/>
+<text x="185.0" y="180" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">Cliente</text>
+<text x="185.0" y="226" text-anchor="middle" font-size="17" font-weight="bold" fill="#14262B">El que pide la pizza</text>
+<text x="185.0" y="254" text-anchor="middle" font-size="15" fill="#4F6469">curl o Postman</text>
+<text x="185.0" y="276" text-anchor="middle" font-size="15" fill="#4F6469">POST con JSON del pedido</text>
+<rect x="430" y="150" width="270" height="150" rx="14" fill="#FFFFFF" stroke="#7B4FD6" stroke-width="3"/>
+<rect x="430" y="150" width="270" height="44" rx="14" fill="#7B4FD6"/><rect x="430" y="180" width="270" height="14" fill="#7B4FD6"/>
+<text x="565.0" y="180" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">Amazon API Gateway</text>
+<text x="565.0" y="226" text-anchor="middle" font-size="17" font-weight="bold" fill="#14262B">La ventanilla</text>
+<text x="565.0" y="254" text-anchor="middle" font-size="15" fill="#4F6469">API HTTP · POST /pedido</text>
+<text x="565.0" y="276" text-anchor="middle" font-size="15" fill="#4F6469">Etapa $default</text>
+<rect x="810" y="150" width="270" height="150" rx="14" fill="#FFFFFF" stroke="#E07A1F" stroke-width="3"/>
+<rect x="810" y="150" width="270" height="44" rx="14" fill="#E07A1F"/><rect x="810" y="180" width="270" height="14" fill="#E07A1F"/>
+<text x="945.0" y="180" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">AWS Lambda</text>
+<text x="945.0" y="226" text-anchor="middle" font-size="17" font-weight="bold" fill="#14262B">El mesero</text>
+<text x="945.0" y="254" text-anchor="middle" font-size="15" fill="#4F6469">receive-order</text>
+<text x="945.0" y="276" text-anchor="middle" font-size="15" fill="#4F6469">Crea orderId y publica evento</text>
+<rect x="1190" y="150" width="360" height="150" rx="14" fill="#FFFFFF" stroke="#D6337A" stroke-width="3"/>
+<rect x="1190" y="150" width="360" height="44" rx="14" fill="#D6337A"/><rect x="1190" y="180" width="360" height="14" fill="#D6337A"/>
+<text x="1370.0" y="180" text-anchor="middle" font-size="20" font-weight="bold" fill="#FFFFFF">Amazon EventBridge</text>
+<text x="1370.0" y="226" text-anchor="middle" font-size="17" font-weight="bold" fill="#14262B">El altavoz</text>
+<text x="1370.0" y="254" text-anchor="middle" font-size="15" fill="#4F6469">Bus default · regla con patrón:</text>
+<text x="1370.0" y="276" text-anchor="middle" font-size="15" fill="#4F6469">source demo.pedidos · NuevoPedido</text>
+<line x1="324" y1="225.0" x2="424" y2="225.0" stroke="#14262B" stroke-width="3" marker-end="url(#ar)"/>
+<line x1="704" y1="225.0" x2="804" y2="225.0" stroke="#14262B" stroke-width="3" marker-end="url(#ar)"/>
+<line x1="1084" y1="225.0" x2="1184" y2="225.0" stroke="#14262B" stroke-width="3" marker-end="url(#ar)"/>
+<text x="375.0" y="213.0" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B7A84">1. POST</text>
+<text x="755.0" y="213.0" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B7A84">2. Invoca</text>
+<text x="1135.0" y="213.0" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B7A84">3. Evento</text>
+<line x1="1370.0" y1="304" x2="1370.0" y2="392" stroke="#14262B" stroke-width="3" marker-end="url(#ar)"/>
+<text x="1382.0" y="348" font-size="14" font-weight="bold" fill="#0B7A84">4. Inicia la ejecución</text>
+<rect x="50" y="395" width="1500" height="410" rx="18" fill="#FFFFFF" stroke="#C0367D" stroke-width="3"/>
+<rect x="50" y="395" width="1500" height="50" rx="18" fill="#C0367D"/><rect x="50" y="431" width="1500" height="14" fill="#C0367D"/>
+<text x="74" y="428" font-size="21" font-weight="bold" fill="#FFFFFF">AWS Step Functions · procesar-pedidos (Standard) · La cocina con su lista de pasos</text>
+<rect x="90" y="485" width="178" height="130" rx="12" fill="#FFFFFF" stroke="#E07A1F" stroke-width="3"/>
+<rect x="90" y="485" width="178" height="38" rx="12" fill="#E07A1F"/><rect x="90" y="511" width="178" height="12" fill="#E07A1F"/>
+<text x="179.0" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">ValidateOrder</text>
+<text x="179.0" y="549" text-anchor="middle" font-size="15" font-weight="bold" fill="#14262B">El inspector</text>
+<text x="179.0" y="573" text-anchor="middle" font-size="13" fill="#4F6469">validate-order</text>
+<text x="179.0" y="597" text-anchor="middle" font-size="13" fill="#0B7A84">datos completos</text>
+<line x1="270" y1="550.0" x2="292" y2="550.0" stroke="#14262B" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="296" y="485" width="178" height="130" rx="12" fill="#FFFFFF" stroke="#E07A1F" stroke-width="3"/>
+<rect x="296" y="485" width="178" height="38" rx="12" fill="#E07A1F"/><rect x="296" y="511" width="178" height="12" fill="#E07A1F"/>
+<text x="385.0" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">CheckInventory</text>
+<text x="385.0" y="549" text-anchor="middle" font-size="15" font-weight="bold" fill="#14262B">Los ingredientes</text>
+<text x="385.0" y="573" text-anchor="middle" font-size="13" fill="#4F6469">check-inventory</text>
+<text x="385.0" y="597" text-anchor="middle" font-size="13" fill="#0B7A84">cantidad ≤ 5</text>
+<line x1="476" y1="550.0" x2="498" y2="550.0" stroke="#14262B" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="502" y="485" width="178" height="130" rx="12" fill="#FFFFFF" stroke="#E07A1F" stroke-width="3"/>
+<rect x="502" y="485" width="178" height="38" rx="12" fill="#E07A1F"/><rect x="502" y="511" width="178" height="12" fill="#E07A1F"/>
+<text x="591.0" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">ProcessPayment</text>
+<text x="591.0" y="549" text-anchor="middle" font-size="15" font-weight="bold" fill="#14262B">El cajero</text>
+<text x="591.0" y="573" text-anchor="middle" font-size="13" fill="#4F6469">process-payment</text>
+<text x="591.0" y="597" text-anchor="middle" font-size="13" fill="#0B7A84">total ≤ 1000</text>
+<line x1="682" y1="550.0" x2="704" y2="550.0" stroke="#14262B" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="708" y="485" width="178" height="130" rx="12" fill="#FFFFFF" stroke="#4F6469" stroke-width="3"/>
+<rect x="708" y="485" width="178" height="38" rx="12" fill="#4F6469"/><rect x="708" y="511" width="178" height="12" fill="#4F6469"/>
+<text x="797.0" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Wait 5 s</text>
+<text x="797.0" y="549" text-anchor="middle" font-size="15" font-weight="bold" fill="#14262B">La espera</text>
+<text x="797.0" y="573" text-anchor="middle" font-size="13" fill="#4F6469">WaitForConfirmation</text>
+<text x="797.0" y="597" text-anchor="middle" font-size="13" fill="#0B7A84">5 segundos</text>
+<line x1="888" y1="550.0" x2="910" y2="550.0" stroke="#14262B" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="914" y="485" width="178" height="130" rx="12" fill="#FFFFFF" stroke="#E07A1F" stroke-width="3"/>
+<rect x="914" y="485" width="178" height="38" rx="12" fill="#E07A1F"/><rect x="914" y="511" width="178" height="12" fill="#E07A1F"/>
+<text x="1003.0" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">ConfirmOrder</text>
+<text x="1003.0" y="549" text-anchor="middle" font-size="15" font-weight="bold" fill="#14262B">El que confirma</text>
+<text x="1003.0" y="573" text-anchor="middle" font-size="13" fill="#4F6469">confirm-order</text>
+<text x="1003.0" y="597" text-anchor="middle" font-size="13" fill="#0B7A84">CONFIRMED</text>
+<line x1="1094" y1="550.0" x2="1116" y2="550.0" stroke="#14262B" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="1120" y="485" width="178" height="130" rx="12" fill="#FFFFFF" stroke="#E07A1F" stroke-width="3"/>
+<rect x="1120" y="485" width="178" height="38" rx="12" fill="#E07A1F"/><rect x="1120" y="511" width="178" height="12" fill="#E07A1F"/>
+<text x="1209.0" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">RegisterAudit</text>
+<text x="1209.0" y="549" text-anchor="middle" font-size="15" font-weight="bold" fill="#14262B">El cuaderno</text>
+<text x="1209.0" y="573" text-anchor="middle" font-size="13" fill="#4F6469">register-audit</text>
+<text x="1209.0" y="597" text-anchor="middle" font-size="13" fill="#0B7A84">registro final</text>
+<line x1="1300" y1="550.0" x2="1322" y2="550.0" stroke="#14262B" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="1326" y="485" width="178" height="130" rx="12" fill="#FFFFFF" stroke="#0B7A84" stroke-width="3"/>
+<rect x="1326" y="485" width="178" height="38" rx="12" fill="#0B7A84"/><rect x="1326" y="511" width="178" height="12" fill="#0B7A84"/>
+<text x="1415.0" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Éxito</text>
+<text x="1415.0" y="549" text-anchor="middle" font-size="15" font-weight="bold" fill="#14262B">Pedido listo</text>
+<text x="1415.0" y="573" text-anchor="middle" font-size="13" fill="#4F6469">SuccessState</text>
+<text x="1415.0" y="597" text-anchor="middle" font-size="13" fill="#0B7A84">ejecución verde</text>
+<line x1="179.0" y1="617" x2="179.0" y2="691" stroke="#C2412D" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<text x="187.0" y="659" font-size="13" fill="#C2412D">INVALID</text>
+<rect x="90" y="695" width="178" height="56" rx="10" fill="#FBE3DE" stroke="#C2412D" stroke-width="2"/>
+<text x="179.0" y="719" text-anchor="middle" font-size="15" font-weight="bold" fill="#C2412D">InvalidOrder</text>
+<text x="179.0" y="739" text-anchor="middle" font-size="12" fill="#4F6469">Fail · el pedido termina</text>
+<line x1="385.0" y1="617" x2="385.0" y2="691" stroke="#C2412D" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<text x="393.0" y="659" font-size="13" fill="#C2412D">más de 5 unidades</text>
+<rect x="296" y="695" width="178" height="56" rx="10" fill="#FBE3DE" stroke="#C2412D" stroke-width="2"/>
+<text x="385.0" y="719" text-anchor="middle" font-size="15" font-weight="bold" fill="#C2412D">OutOfStock</text>
+<text x="385.0" y="739" text-anchor="middle" font-size="12" fill="#4F6469">Fail · el pedido termina</text>
+<line x1="591.0" y1="617" x2="591.0" y2="691" stroke="#C2412D" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<text x="599.0" y="659" font-size="13" fill="#C2412D">más de 1000</text>
+<rect x="502" y="695" width="178" height="56" rx="10" fill="#FBE3DE" stroke="#C2412D" stroke-width="2"/>
+<text x="591.0" y="719" text-anchor="middle" font-size="15" font-weight="bold" fill="#C2412D">PaymentRejected</text>
+<text x="591.0" y="739" text-anchor="middle" font-size="12" fill="#4F6469">Fail · el pedido termina</text>
+<text x="718" y="719" font-size="15" fill="#4F6469">Puse un Choice después de cada revisión:</text>
+<text x="718" y="743" font-size="15" fill="#4F6469">si el pedido cumple, sigue; si no, termina en un estado Fail.</text>
+<rect x="50" y="830" width="735" height="80" rx="14" fill="#FFFFFF" stroke="#B8382E" stroke-width="2.5"/>
+<text x="70" y="862" font-size="18" font-weight="bold" fill="#B8382E">AWS IAM · los permisos</text>
+<text x="70" y="890" font-size="15" fill="#4F6469">Lambda: events:PutEvents · EventBridge: StartExecution · Step Functions: InvokeFunction</text>
+<rect x="815" y="830" width="735" height="80" rx="14" fill="#FFFFFF" stroke="#0B7A84" stroke-width="2.5"/>
+<text x="835" y="862" font-size="18" font-weight="bold" fill="#0B7A84">Amazon CloudWatch Logs · el diario</text>
+<text x="835" y="890" font-size="15" fill="#4F6469">Aquí leí los print() de cada Lambda; así encontré los errores del laboratorio</text>
+<text x="800.0" y="970" text-anchor="middle" font-size="15" fill="#4F6469">Región us-east-1 · Lo hice todo serverless: no tengo servidores encendidos y solo pago por cada pedido procesado · © John Luis Gamboa Gamboa 2026</text>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5NmMxNWUzMS1lMWRjLTRiNTYtYjliMC1jYzVkMDMyM2UxMmIAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaBnlV0BEjWtJfN5z8v+9RTEAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo3ZDk2OTEwNy05NTUxLTQxZTUtOWY5NC0wYmQ4ZDNlYTI5NTdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNozg7/DHtJhlGpez6icRWfhwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggjz9wGGXirqNQCCKPNQBSY3FmpmWGQjJzLTncYcpXQQSkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaNy/OiSn9vZT4NfzQCAwE/QAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIEQGQM65ybba/NlI2COG82aDL699njN0UtUQBcHvmrzvZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GTNNZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjk2YzE1ZTMxLWUxZGMtNGI1Ni1iOWIwLWNjNWQwMzIzZTEyYi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjQ0MjJiNGJhLTBjMTEtNDEzMy05MjFiLTBlOTczYjAzMDM4ZnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCPP3AYZeKuo1AIIo81AFJjcWamZYZCMnMtOdxhyldBBKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggSGQTPEiHHl8udX+J8agqDkMiHbbG2WT6cOSAkPxVCjyiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg5YDrSn1jDyjs1nW1fVdq5NVbO35bouV5EHmpppGXq8V0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQJFfEuG+3MDTFu88CU1NskjPJoXTBlYD+3eFNch3g2XgyZdt8GR+3KSoaGAICt3pkUNFJeBSp7jdi7UQl52/jCk=</c2pa:manifest></metadata></svg>
